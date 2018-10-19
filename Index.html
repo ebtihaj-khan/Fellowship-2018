@@ -1,0 +1,25 @@
+<?php 
+class Callback extends MX_Controller{
+    
+    function callback_url()
+    {
+        $ch = curl_init();
+curl_setopt($ch, CURLOPT_URL, 'https://api.arthuronline.co.uk/properties/index.json');
+curl_setopt($ch, CURLOPT_HTTPHEADER, array('Authorization:Bearer 39a55b6bb7ebae197a9f2276362d581676a633cf3f1bff02ed76d6013e5f682d',
+'X-ENTITYID:42273','Cache-Control:no-cache','Content-Type:application/json'));
+curl_setopt($ch, CURLOPT_RETURNTRANSFER, true);
+
+$result = curl_exec($ch);
+curl_close($ch);
+
+
+
+}
+
+
+    }
+	
+}
+
+
+?>   
